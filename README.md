@@ -1,0 +1,2 @@
+# fixea
+aplicación móvil fixea
