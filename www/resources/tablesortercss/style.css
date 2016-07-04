@@ -1,0 +1,17 @@
+/* tables */
+.tablesorter-headerAsc {
+    background-image: url(asc.gif);
+    background-repeat: no-repeat;
+    background-position:right center;
+}
+.tablesorter-headerDesc {
+    background-image: url(desc.gif);
+    background-repeat: no-repeat;
+    background-position:right center;       
+}
+.tablesorter-headerUnSorted {
+    background-image: url(bg.gif);
+    background-repeat: no-repeat;
+    background-position:right center;       
+}
+

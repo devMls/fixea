@@ -1,0 +1,8 @@
+//hace de pantalla entera los popup
+.ui-popup-container, .ui-popup {
+    height: 98%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+}

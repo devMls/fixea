@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src  'self' https://maps.googleapis.com/ https://fonts.gstatic.com/ data: gap: https://ssl.gstatic.com 'unsafe-eval';  img-src data: 'self' @domain@ https://maps.googleapis.com/ https://maps.gstatic.com/ https://csi.gstatic.com/; style-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://maps.googleapis.com/ 'unsafe-inline'; media-src *; connect-src 'self' @domain@">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="resources/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/css.css" />
+
+        <title>Fixea</title>
+    </head>
+    <body>
+
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"  data-position="fixed">
+            <h1 class="ui-title" id="tituloDetalle" role="heading" aria-level="1">Que quieres hacer hoy:</h1>
+            <a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a>
+        </div>
+        <div id="mostrarDetalle"></div>
+ <div id="uibartest" class="ui-bar ui-bar-b ui-corner-all" style="margin-bottom:1em;">
+                <p>Email enviado al anunciante</p>
+            </div>
+        <!--siempre los template por encima de los script a ser posible donde deban ir-->
+        <script type="text/html" id="templateDetalle" >
+
+           
+            <div id="ui-body-test" class="ui-body ui-body-a ui-corner-all" style="margin-bottom:1em;">
+                <center>
+                    {{#if direccion}}
+                    <div style="width:300px;height:200px" id="map_canvas"></div>
+                    {{else}}
+                    <img src="@domain@/servicios/dameImagenAnuncio/{{_id}}" height="250" width="250"/>
+                    {{/if}}
+
+                </center>
+                <h2>{{titulo}}</h2>
+                {{#if direccion}}
+                <h4>Taller en:{{direccion}}</h4>
+                {{/if}}
+                <p>{{descripcion}}</p>
+
+            </div>
+        </script>
+        <a href="#popupcontact" data-rel="popup" data-transition="pop" class="ui-btn  ui-corner-all ui-shadow ui-icon-mail ui-btn-icon-left ui-btn-active">Contactar con anunciante</a>
+        <div   data-role="popup" id="popupcontact" data-theme="b" data-overlay-theme="b" class="ui-corner-all">
+            <form>
+                <div    style="padding:20px ">
+                    <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                    <br/>    <h3>Escribe algo al anunciante</h3>
+                    <textarea type="text" name="user" id="textocontacto" value="" placeholder="username" data-theme="a">
+Hola, he visto tu anuncio y me gustaria ponerme en contacto contigo, 
+                    </textarea>
+                    <p id='contactoemailorigen'></p>
+
+                    <button id="enviarAnuncio" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left ui-icon-mail ui-btn-active">enviar email</button>
+
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=@keygoogle@">
+        </script>
+        <script type="text/javascript" src="resources/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="resources/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="resources/handlebars.min.js"></script>
+        <script src="resources/fastclick.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="resources/jquery.rest.min.js"></script>
+        <script src="js/restclient.js"></script>
+        <script type="text/javascript" src="js/detalle.js"></script>
+
+
+    </body>
+</html>

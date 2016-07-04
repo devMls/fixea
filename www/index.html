@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src 'self'@domain@">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="resources/jquery.mobile-1.4.5.min.css" />
+
+        <title>Fixea</title>
+    </head>
+    <body>
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"  data-position="fixed">
+            <a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a>
+            <h1 class="ui-title" id="tituloFixea" role="heading" aria-level="1">Fixea</h1>
+            <a href="#" id="cerrarsesion" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button"></a>
+
+        </div>
+        <select id="paisSelector" required></select>
+        <script type="text/html" id="templatePaises" >
+        <option style="display: none;" value="">Selecciona pais</option>
+        {{#each this}}
+        <option value="{{_id}}"> {{nombre}}</option>
+        {{/each}}
+    </script>
+
+
+
+    <select id="ciudadSelector"  required></select>
+    <script type="text/html" id="templateCiudades" >
+        <option style="display: none;" value="">Selecciona una ciudad</option>
+        {{#each this}}
+        <option value="{{_id}}"> {{nombre}}</option>
+        {{/each}}
+    </script>
+
+    <h3>Que quieres hacer hoy:</h3>  
+    <a data-role="button" id="fixie"  class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r ui-btn-icon-right">fixie</a>
+    <a data-role="button" id="fixeable"   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r ui-btn-icon-right">fixeable</a>
+    <a data-role="button" id="fixer"    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r ui-btn-icon-right">Fixers</a>
+    <br/>      
+    <a data-role="button" id="fixsite"    class="ui-btn ui-corner-all ui-shadow ui-icon-carat-r ui-btn-icon-right">FixSites: talleres para Fix</a>
+    <br/>
+    <a data-role="button" id="anunciar" class="ui-btn ui-btn-active ui-corner-all ui-shadow    ui-icon-arrow-u ui-btn-icon-right">Publicar un anuncio</a>
+
+
+    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all"  data-dismissible="false">
+        <div style="padding:10px 20px;">
+            <h3>Introduzca su usuario:</h3>
+            <label for="un"  class="ui-hidden-accessible">Usuario:</label>
+            <input type="email" name="user" id="un" value="" placeholder="email" data-theme="a">
+            <label for="pw" class="ui-hidden-accessible">Password:</label>
+            <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+            <p id="textoIncorrecto"></p>
+            <button id="conectarse" class="ui-btn ui-corner-all ui-shadow ui-btn-active ui-btn-icon-left ui-icon-check">Conectarse</button>
+        </div>
+        <button id="registrarse" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-comment">Registrarse</button>
+    </div>
+    <script type="text/javascript" src="resources/base64.js"></script>
+    <script type="text/javascript" src="resources/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="resources/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="resources/handlebars.min.js"></script>
+    <script src="resources/fastclick.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="resources/jquery.rest.min.js"></script>
+    <script src="js/restclient.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

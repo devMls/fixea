@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src 'self' @domain@">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="resources/jquery.mobile-1.4.5.min.css" />
+
+        <title>Fixea</title>
+    </head>
+    <body>
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"  data-position="fixed">
+            <a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a>
+            <h1 class="ui-title" id="tituloFixea" role="heading" aria-level="1">Config</h1>
+        </div>
+        <a data-role="button" id="desconectar"    class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Desconectar</a>
+        <br/>
+        <label for="pwRegistro3">Password:</label>
+        <input type="password" name="pass" id="pwRegistro3" value="" placeholder="password" data-theme="a">
+        <label for="pwRegistro4">Repita su password:</label>
+        <input type="password" name="pass" id="pwRegistro4" value="" placeholder="password" data-theme="a">
+        <a data-role="button" id="cambiarpass" class="ui-btn ui-btn-active ui-corner-all ui-shadow    ui-icon-lock ui-btn-icon-right">Cambiar password</a>
+        <br/>
+        <select id="anuncioSelector" required></select>
+        <script type="text/html" id="templateSelectAnuncio" >
+        <option style="display: none;" value="">Selecciona un anuncio</option>
+        {{#each this}}
+        <option value="{{_id}}"> {{titulo}}</option>
+        {{/each}}
+    </script>
+    <a data-role="button" id="borraranuncio" class="ui-btn ui-btn-b ui-corner-all ui-shadow    ui-icon-delete ui-btn-icon-right">borrar anuncio</a>
+
+
+
+
+    <div data-role="popup" id="popupRegistro2" data-theme="a" class="ui-corner-all"  data-dismissible="false">
+        <div style="padding:10px 20px;">
+            <h3 id='textologin2'>texto resultado</h3>
+            <button id="confirmar2" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-active ui-btn-icon-left">
+                Aceptar
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="resources/base64.js"></script>
+    <script type="text/javascript" src="resources/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="resources/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="resources/handlebars.min.js"></script>
+    <script src="resources/fastclick.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="resources/jquery.rest.min.js"></script>
+    <script src="js/restclient.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+</body>
+</html>

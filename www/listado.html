@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="resources/jquery.mobile-1.4.5.min.css" />
+
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; img-src data: 'self' @domain@; style-src 'self' 'unsafe-inline'; media-src *; connect-src 'self' @domain@">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="resources/jquery.mobile-1.4.5.min.css" />
+        <title>Fixea</title>
+    </head>
+    <body>
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit"  data-position="fixed">
+            <h1 class="ui-title" id="tituloCiudad" role="heading" aria-level="1">Que quieres hacer hoy:</h1>
+            <a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a>
+            <a href="#" id="anunciarlistado" class="ui-btn-right ui-btn ui-icon-arrow-u ui-btn-icon-left ui-shadow ui-corner-all" data-role="button" role="button">Publicar</a>
+            <div data-role="navbar" class="ui-navbar" role="navigation">
+                <ul class="ui-grid-b">
+                    <li class="ui-block-a"><a href="#" id="fixeablelink" class="ui-link ui-btn">Fixeable</a></li>
+                    <li class="ui-block-b"><a href="#" id="fixielink" class="ui-link ui-btn">Fixie</a></li>
+                    <li class="ui-block-c"><a href="#" id="fixsitelink" class="ui-link ui-btn">FixSites</a></li>
+                    <li class="ui-block-c"><a href="#" id="fixerlink" class="ui-link ui-btn">Fixers</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <!--siempre los template por encima de lo  script a ser posible donde deban ir-->
+
+
+        <ul id ="listaComprar" data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+
+        </ul>
+
+
+        <script type="text/html" id="templateListado"> 
+            {{#each this}}  
+        <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
+
+                {{#if direccion}}
+                <img src="img/descarga.jpg">
+
+                {{else}}
+                <img src="@domain@/servicios/dameImagenAnuncio/{{_id}}">
+
+                {{/if}}
+
+
+                <h2>{{titulo}}   </h2>
+                <p>{{{trimString descripcion}}}</p></a>
+            <button id="{{_id}}"   data-position-to="window"  class="ui-btn ui-btn-icon-notext ui-icon-arrow-r" title="detalle"><</a>
+    </li> 
+    {{/each}}
+</script>
+
+
+<script type="text/javascript" src="resources/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="resources/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="resources/handlebars.min.js"></script>
+<script src="resources/fastclick.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script src="resources/jquery.rest.min.js"></script>
+<script src="js/restclient.js"></script>
+<script type="text/javascript" src="js/listado.js"></script>
+</body>
+</html>
