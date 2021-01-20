@@ -22,4 +22,4 @@ https://drive.google.com/open?id=0B28GvxkEHsYtMndTZzVFRU9RTUU
 Esta aplicación esta desarrollada con netbeans y la tecnologia apache cordova, jquerymobile y handerbarsjs.
 
 # Enlace a github pages
-https://github.com/devMls/fixea
+https://devmls.github.io/fixea/
